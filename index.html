@@ -14,9 +14,11 @@
       --line: #d9d7d0;
       --soft: #e8e6df;
       --white: #fff;
+      --positive: #235b46;
+      --positive-soft: #dfe9e3;
       --radius: 22px;
---sans: "Helvetica Neue", Arial, sans-serif;
---serif: "Helvetica Neue", Arial, sans-serif;
+      --sans: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --display: "Aptos Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -64,13 +66,13 @@
       color: var(--muted);
     }
     .hero h1 {
-      max-width: 990px;
+      max-width: 900px;
       margin: 24px 0 32px;
-      font-family:"Helvetica Neue", Arial, sans-serif;
-      font-size: clamp(54px, 8vw, 110px);
-      font-weight: 400;
-      line-height: .91;
-      letter-spacing: -.065em;
+      font-family: var(--display);
+      font-size: clamp(46px, 6.4vw, 80px);
+      font-weight: 620;
+      line-height: .98;
+      letter-spacing: -.05em;
     }
     .hero-bottom {
       display: grid;
@@ -102,7 +104,7 @@
     .project-link:nth-child(2) { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
     .project-link:hover { transform: translateY(-4px); }
     .project-link .num { font-size: 11px; color: #a7a59f; letter-spacing: .14em; }
-    .project-link h2 { margin: 0; max-width: 500px; font-size: clamp(27px, 3vw, 42px); line-height: 1; letter-spacing: -.045em; }
+    .project-link h2 { margin: 0; max-width: 500px; font-size: clamp(25px, 2.6vw, 36px); line-height: 1.08; letter-spacing: -.035em; }
     .project-link .arrow { align-self: flex-end; font-size: 28px; }
 
     .case { padding: 90px 0 120px; border-top: 1px solid var(--line); }
@@ -116,11 +118,11 @@
     .case-title-wrap h2 {
       margin: 0;
       max-width: 850px;
-      font-family: var(--serif);
-      font-size: clamp(44px, 6vw, 76px);
-      font-weight: 400;
-      line-height: .98;
-      letter-spacing: -.055em;
+      font-family: var(--display);
+      font-size: clamp(38px, 4.8vw, 58px);
+      font-weight: 620;
+      line-height: 1.04;
+      letter-spacing: -.045em;
     }
     .case-summary { max-width: 750px; margin: 26px 0 0; font-size: 18px; color: var(--muted); }
 
@@ -134,10 +136,10 @@
       background: var(--line);
       margin-bottom: 18px;
     }
-    .story-step { min-height: 250px; padding: 25px; background: var(--card); position: relative; }
+    .story-step { min-height: 225px; padding: 25px; background: var(--card); position: relative; }
     .story-step.dark { background: var(--ink); color: var(--white); }
     .story-step .step-no { font-size: 10px; letter-spacing: .14em; color: #929089; }
-    .story-step h3 { margin: 54px 0 14px; font-size: 19px; letter-spacing: -.025em; }
+    .story-step h3 { margin: 42px 0 14px; font-size: 18px; letter-spacing: -.02em; }
     .story-step p { margin: 0; font-size: 14px; color: var(--muted); }
     .story-step.dark p { color: #bbb8b0; }
     .story-step:not(:last-child)::after {
@@ -159,13 +161,13 @@
 
     .metric-row { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 14px; margin: 14px 0 56px; }
     .metric-card { min-height: 210px; padding: 26px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
-    .metric-card.primary { background: var(--ink); color: var(--white); border-color: var(--ink); }
-    .metric-value { margin-top: 34px; font-family: var(--serif); font-size: clamp(54px, 6vw, 82px); line-height: .9; letter-spacing: -.06em; }
+    .metric-card.primary { background: var(--positive); color: var(--white); border-color: var(--positive); }
+    .metric-value { margin-top: 30px; font-family: var(--display); font-size: clamp(46px, 5vw, 64px); font-weight: 650; line-height: .95; letter-spacing: -.05em; }
     .metric-label { margin-top: 14px; max-width: 240px; color: var(--muted); font-size: 13px; }
     .primary .metric-label { color: #bcb9b1; }
 
     .section-intro { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin: 0 0 24px; }
-    .section-intro h3 { margin: 0; font-size: 28px; letter-spacing: -.04em; }
+    .section-intro h3 { margin: 0; font-size: 25px; letter-spacing: -.035em; }
     .section-intro p { margin: 0; max-width: 520px; color: var(--muted); font-size: 13px; }
 
     .dashboard { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
@@ -191,6 +193,32 @@
     .legend i.outline { background: transparent; border: 1px solid var(--ink); }
     .dark .legend i { background: #fff; }
 
+    .change-panel {
+      display: grid;
+      grid-template-columns: 1fr auto 1.15fr auto 1fr;
+      align-items: stretch;
+      gap: 12px;
+      margin: 14px 0 56px;
+    }
+    .change-stage {
+      min-height: 168px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .change-stage.action { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .change-stage.result { background: var(--positive-soft); border-color: #b9cec1; }
+    .change-stage small { color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .change-stage.action small { color: #a9a69f; }
+    .change-stage strong { font-size: clamp(24px, 2.7vw, 36px); line-height: 1.05; letter-spacing: -.04em; }
+    .change-stage p { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+    .change-stage.action p { color: #bbb8b0; }
+    .change-arrow { display: grid; place-items: center; color: var(--muted); font-size: 20px; }
+
     .insight {
       margin: 18px 0 56px;
       padding: 30px 32px;
@@ -200,12 +228,12 @@
       grid-template-columns: 180px minmax(0, 1fr);
       gap: 46px;
     }
-    .insight blockquote { margin: 0; max-width: 850px; font-family: var(--serif); font-size: clamp(25px, 3vw, 39px); line-height: 1.16; letter-spacing: -.035em; }
+    .insight blockquote { margin: 0; max-width: 850px; font-family: var(--display); font-size: clamp(22px, 2.5vw, 31px); font-weight: 560; line-height: 1.25; letter-spacing: -.025em; }
 
     .before-after { display: grid; grid-template-columns: 1fr 70px 1fr; gap: 18px; align-items: stretch; margin: 0 0 58px; }
     .state { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
-    .state.after { background: var(--ink); color: var(--white); border-color: var(--ink); }
-    .state h4 { margin: 34px 0 18px; font-size: 26px; letter-spacing: -.04em; }
+    .state.after { background: var(--positive); color: var(--white); border-color: var(--positive); }
+    .state h4 { margin: 28px 0 18px; font-size: 23px; letter-spacing: -.035em; }
     .state ul { margin: 0; padding: 0; list-style: none; }
     .state li { padding: 11px 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
     .state.after li { border-color: #3b3a36; color: #c5c2ba; }
@@ -218,14 +246,14 @@
     .flow-step span { color: var(--muted); font-size: 10px; }
 
     .method { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 70px 0; border-top: 1px solid var(--line); }
-    .method h2 { margin: 0; font-family: var(--serif); font-size: clamp(38px, 5vw, 64px); font-weight: 400; line-height: 1; letter-spacing: -.05em; }
+    .method h2 { margin: 0; font-family: var(--display); font-size: clamp(34px, 4vw, 50px); font-weight: 620; line-height: 1.06; letter-spacing: -.04em; }
     .method-copy { color: var(--muted); font-size: 16px; }
     .method-copy p:first-child { margin-top: 0; }
     .method-note { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
 
     footer { padding: 60px 0 42px; background: var(--ink); color: var(--white); }
     .footer-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 60px; }
-    footer h2 { margin: 0; max-width: 760px; font-family: var(--serif); font-size: clamp(44px, 6vw, 78px); font-weight: 400; line-height: .95; letter-spacing: -.055em; }
+    footer h2 { margin: 0; max-width: 760px; font-family: var(--display); font-size: clamp(36px, 4.8vw, 56px); font-weight: 620; line-height: 1.02; letter-spacing: -.045em; }
     .footer-links { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 10px; color: #bdbab3; font-size: 14px; }
     .footer-links a { border-bottom: 1px solid #6f6c66; }
     .copyright { margin-top: 70px; padding-top: 18px; border-top: 1px solid #363531; color: #77746d; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
@@ -246,6 +274,8 @@
       .workflow { grid-template-columns: 1fr 1fr; }
       .flow-step:not(:last-child)::after { display: none; }
       .flow-step:last-child { grid-column: span 2; }
+      .change-panel { grid-template-columns: 1fr; }
+      .change-arrow { min-height: 24px; transform: rotate(90deg); }
     }
 
     @media (max-width: 680px) {
@@ -340,6 +370,23 @@
           </div>
         </section>
 
+        <section class="change-panel" aria-label="Capacity change summary">
+          <div class="change-stage">
+            <small>Baseline</small>
+            <div><strong>Index 100</strong><p>One class remained above its workable capacity.</p></div>
+          </div>
+          <div class="change-arrow">→</div>
+          <div class="change-stage action">
+            <small>Operating decision</small>
+            <div><strong>Reallocate + adjust</strong><p>Matched student demand with available teaching coverage.</p></div>
+          </div>
+          <div class="change-arrow">→</div>
+          <div class="change-stage result">
+            <small>Measured result</small>
+            <div><strong>Index 67</strong><p>Overcapacity decreased by 33% after the intervention.</p></div>
+          </div>
+        </section>
+
         <section class="metric-row" aria-label="Capacity project key metrics">
           <div class="metric-card primary">
             <div class="eyebrow">Measured impact</div>
@@ -388,7 +435,7 @@
             <svg viewBox="0 0 440 250" role="img" aria-label="Overcapacity index declined from 100 to 67">
               <line x1="70" y1="195" x2="382" y2="195" stroke="#4b4944"/>
               <rect x="110" y="60" width="90" height="135" rx="45" fill="#f8f7f3"/>
-              <rect x="260" y="105" width="90" height="90" rx="45" fill="#74716b"/>
+              <rect x="260" y="105" width="90" height="90" rx="45" fill="#5d9b7d"/>
               <text class="chart-label" x="139" y="51">100</text><text class="chart-label-light" x="296" y="96">67</text>
               <text class="chart-text-light" x="131" y="220">BEFORE</text><text class="chart-text-light" x="283" y="220">AFTER</text>
               <path d="M205 91 C225 77 241 77 256 91" fill="none" stroke="#8e8b85" stroke-dasharray="3 4"/>
@@ -467,6 +514,23 @@
           </div>
         </section>
 
+        <section class="change-panel" aria-label="Inquiry process change summary">
+          <div class="change-stage">
+            <small>Baseline</small>
+            <div><strong>Manual rework</strong><p>Missing and inconsistent details delayed director review.</p></div>
+          </div>
+          <div class="change-arrow">→</div>
+          <div class="change-stage action">
+            <small>Process redesign</small>
+            <div><strong>Form → Sheet → Review</strong><p>Standardized intake and created a visible follow-up queue.</p></div>
+          </div>
+          <div class="change-arrow">→</div>
+          <div class="change-stage result">
+            <small>Measured result</small>
+            <div><strong>−40% cycle time</strong><p>Consultation information became decision-ready sooner.</p></div>
+          </div>
+        </section>
+
         <div class="section-intro"><h3>Redesigned workflow</h3><p>The form was not the outcome. Its purpose was to move complete, consistently structured information to the next decision-maker with less rework.</p></div>
         <section class="workflow" aria-label="Inquiry workflow">
           <div class="flow-step"><span>01 · INPUT</span><b>Customer inquiry</b></div>
@@ -502,8 +566,8 @@
             <div class="viz-title"><div><h4>Queue health</h4><p class="viz-sub">Current operational status</p></div></div>
             <svg viewBox="0 0 380 250" role="img" aria-label="Inquiry queue status rings">
               <circle cx="190" cy="132" r="76" fill="none" stroke="#dedcd5" stroke-width="24"/>
-              <circle cx="190" cy="132" r="76" fill="none" stroke="#181816" stroke-width="24" stroke-dasharray="310 478" transform="rotate(-90 190 132)"/>
-              <text x="190" y="127" text-anchor="middle" style="font: 700 40px var(--serif); fill:#181816">65%</text>
+              <circle cx="190" cy="132" r="76" fill="none" stroke="#235b46" stroke-width="24" stroke-dasharray="310 478" transform="rotate(-90 190 132)"/>
+              <text x="190" y="127" text-anchor="middle" style="font: 700 38px var(--display); fill:#181816">65%</text>
               <text class="chart-text" x="190" y="149" text-anchor="middle">PROCESSED</text>
               <text class="chart-text" x="190" y="225" text-anchor="middle">pending and unresolved remain visible</text>
             </svg>
@@ -515,8 +579,8 @@
               <line class="axis" x1="55" y1="196" x2="665" y2="196"/>
               <path d="M65 80 C140 74 205 88 278 82 S395 90 430 86" fill="none" stroke="#aaa7a0" stroke-width="2"/>
               <line x1="430" y1="42" x2="430" y2="208" stroke="#181816" stroke-dasharray="3 5"/>
-              <path d="M430 86 C484 110 530 133 580 143 S625 151 655 153" fill="none" stroke="#181816" stroke-width="3"/>
-              <circle cx="430" cy="86" r="6" fill="#181816"/><circle cx="655" cy="153" r="6" fill="#181816"/>
+              <path d="M430 86 C484 110 530 133 580 143 S625 151 655 153" fill="none" stroke="#235b46" stroke-width="3"/>
+              <circle cx="430" cy="86" r="6" fill="#235b46"/><circle cx="655" cy="153" r="6" fill="#235b46"/>
               <text class="chart-label" x="447" y="58">WORKFLOW REDESIGN</text><text class="chart-label" x="601" y="137">−40%</text>
               <text class="chart-text" x="58" y="220">BASELINE</text><text class="chart-text" x="585" y="220">SUSTAINED VIEW</text>
             </svg>
