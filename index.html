@@ -95,7 +95,7 @@
     .impact-card, .capability-card { padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
     .impact-card { min-height: 205px; display: flex; flex-direction: column; justify-content: space-between; }
     .impact-card:hover { border-color: #aebfd8; }
-    .impact-number { font-family: var(--display); font-size: clamp(34px, 4vw, 50px); font-weight: 650; line-height: 1; letter-spacing: -.045em; }
+    .impact-number { margin-top: 28px; font-family: var(--display); font-size: clamp(34px, 4vw, 50px); font-weight: 650; line-height: 1; letter-spacing: -.045em; }
     .impact-card h3, .capability-card h3 { margin: 18px 0 8px; font-size: 19px; letter-spacing: -.02em; }
     .impact-card p, .capability-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
     .impact-link { margin-top: 18px; color: var(--positive); font-size: 13px; font-weight: 750; }
@@ -391,7 +391,6 @@
     <div class="shell nav-inner">
       <a class="brand" href="#top">Ruby Lee</a>
       <div class="nav-links">
-        <a href="#impact">Impact</a>
         <a href="#work">Case studies</a>
         <a href="#method">Approach</a>
         <a class="contact-link" href="mailto:ruby9854@gmail.com">Contact</a>
@@ -415,23 +414,38 @@
       </div>
     </header>
 
-    <section class="shell home-section" id="impact" aria-labelledby="impact-title">
+    <section class="shell home-section" id="work" aria-labelledby="work-title">
       <div class="home-head">
-        <h2 id="impact-title">Selected impact</h2>
-        <p>Three examples of analysis translated into an operating decision, a process change, or a decision-ready output.</p>
+        <h2 id="work-title">Selected case studies</h2>
+        <p>Each case shows the operating problem, my analysis, the change implemented, and the resulting impact or decision output.</p>
       </div>
       <div class="impact-grid">
         <a class="impact-card" href="#capacity">
-          <div><div class="impact-number">−33%</div><h3>Lower overcapacity</h3><p>Class-level utilization analysis exposed an imbalance hidden by the 78% overall average and supported a schedule adjustment.</p></div>
-          <span class="impact-link">Capacity case →</span>
+          <div>
+            <div class="eyebrow">Project 01 · Capacity / Scheduling</div>
+            <div class="impact-number">−33%</div>
+            <h3>Class Capacity &amp; Utilization Optimization</h3>
+            <p>Class-level analysis exposed an imbalance hidden by the 78% overall average and supported a workable schedule adjustment.</p>
+          </div>
+          <span class="impact-link">View case study →</span>
         </a>
         <a class="impact-card" href="#inquiry">
-          <div><div class="impact-number">−40%</div><h3>Faster consultation processing</h3><p>A standardized form, automated sheet capture, and visible follow-up status reduced repeated clarification and cycle time.</p></div>
-          <span class="impact-link">Workflow case →</span>
+          <div>
+            <div class="eyebrow">Project 02 · Process / Reporting</div>
+            <div class="impact-number">−40%</div>
+            <h3>Inquiry Workflow &amp; Reporting Improvement</h3>
+            <p>Standardized intake and automated sheet capture reduced repeated clarification and consultation processing time.</p>
+          </div>
+          <span class="impact-link">View case study →</span>
         </a>
         <a class="impact-card" href="#research">
-          <div><div class="impact-number">412 → 42</div><h3>Raw records to priority targets</h3><p>Cleaning and enrichment turned fragmented school data into 325 validated profiles and 42 director-ready outreach targets.</p></div>
-          <span class="impact-link">Decision-support case →</span>
+          <div>
+            <div class="eyebrow">Project 03 · Data Quality / Market Intelligence</div>
+            <div class="impact-number">412 → 42</div>
+            <h3>School Market Intelligence &amp; Outreach Prioritization</h3>
+            <p>Cleaning and enrichment turned fragmented records into 325 validated profiles and 42 priority outreach targets.</p>
+          </div>
+          <span class="impact-link">View case study →</span>
         </a>
       </div>
     </section>
@@ -446,24 +460,6 @@
         <div class="capability-card"><div class="eyebrow">Process improvement</div><h3>Reduce rework and clarify handoffs</h3><p>Map the current workflow, standardize inputs, automate capture, and make ownership and status visible.</p></div>
         <div class="capability-card"><div class="eyebrow">Decision support</div><h3>Turn scattered records into usable choices</h3><p>Clean, validate, enrich, and structure information so decision-makers can compare options consistently.</p></div>
       </div>
-    </section>
-
-    <section class="shell project-index" id="work" aria-label="Selected projects">
-      <a class="project-link" href="#capacity">
-        <span class="num">PROJECT 01 · CAPACITY / SCHEDULING</span>
-        <h2>Class Capacity &amp; Utilization Optimization</h2>
-        <span class="arrow">↘</span>
-      </a>
-      <a class="project-link" href="#inquiry">
-        <span class="num">PROJECT 02 · PROCESS / REPORTING</span>
-        <h2>Inquiry Workflow &amp; Reporting Improvement</h2>
-        <span class="arrow">↘</span>
-      </a>
-      <a class="project-link" href="#research">
-        <span class="num">PROJECT 03 · DATA QUALITY / MARKET INTELLIGENCE</span>
-        <h2>School Market Intelligence &amp; Outreach Prioritization</h2>
-        <span class="arrow">↘</span>
-      </a>
     </section>
 
     <article class="case" id="capacity">
