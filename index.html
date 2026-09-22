@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ruby Lee's business operations portfolio: capacity planning, workflow design, and operational reporting.">
-  <title>Ruby Lee — Business Operations Portfolio</title>
+  <meta name="description" content="Ruby Lee's Business Operations Analyst portfolio: process improvement, operational analysis, reporting, and decision support for Toronto and GTA roles.">
+  <title>Ruby Lee — Business Operations Analyst Portfolio</title>
   <style>
     :root {
       --paper: #f7f8fa;
@@ -83,6 +83,23 @@
     }
     .hero-copy { max-width: 680px; margin: 0; font-size: clamp(18px, 2vw, 24px); color: #45433e; letter-spacing: -.015em; }
     .hero-note { border-top: 1px solid var(--ink); padding-top: 14px; font-size: 14px; color: var(--muted); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .button-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 17px; border: 1px solid var(--ink); border-radius: 999px; font-size: 14px; font-weight: 700; }
+    .button-link.primary { background: var(--ink); color: var(--white); }
+
+    .home-section { padding: 0 0 86px; }
+    .home-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 24px; }
+    .home-head h2 { max-width: 680px; margin: 0; font-family: var(--display); font-size: clamp(31px, 4vw, 48px); line-height: 1.06; letter-spacing: -.04em; }
+    .home-head p { max-width: 520px; margin: 0; color: var(--muted); font-size: 15px; }
+    .impact-grid, .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .impact-card, .capability-card { padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+    .impact-card { min-height: 205px; display: flex; flex-direction: column; justify-content: space-between; }
+    .impact-card:hover { border-color: #aebfd8; }
+    .impact-number { font-family: var(--display); font-size: clamp(34px, 4vw, 50px); font-weight: 650; line-height: 1; letter-spacing: -.045em; }
+    .impact-card h3, .capability-card h3 { margin: 18px 0 8px; font-size: 19px; letter-spacing: -.02em; }
+    .impact-card p, .capability-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+    .impact-link { margin-top: 18px; color: var(--positive); font-size: 13px; font-weight: 750; }
+    .capability-card { min-height: 180px; }
 
     .project-index {
       display: grid;
@@ -204,10 +221,11 @@
       border-radius: var(--radius);
       background: var(--card);
     }
-    .execution-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 24px; }
-    .execution-item + .execution-item { border-left: 1px solid var(--line); padding-left: 30px; }
+    .execution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+    .execution-item { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #fafbfd; }
     .execution-item h4 { margin: 0 0 10px; font-size: 17px; letter-spacing: -.02em; }
     .execution-item p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+    .measurement-note { margin: -38px 0 56px; padding-left: 2px; color: var(--muted); font-size: 12px; line-height: 1.55; }
 
     .quality-metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0 56px; }
     .quality-card { min-height: 170px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
@@ -301,6 +319,11 @@
     .method-copy { color: var(--muted); font-size: 16px; }
     .method-copy p:first-child { margin-top: 0; }
     .method-note { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
+    .method-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 26px; }
+    .method-step { min-height: 112px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+    .method-step span { color: var(--positive); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .method-step b { display: block; margin-top: 22px; font-size: 14px; line-height: 1.35; }
+    .tools-line { margin-top: 24px; padding: 20px; border-radius: 14px; background: var(--positive-soft); color: var(--ink); font-size: 14px; line-height: 1.6; }
 
     footer { padding: 60px 0 42px; background: var(--ink); color: var(--white); }
     .footer-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 60px; }
@@ -330,11 +353,9 @@
       .project-index { grid-template-columns: 1fr; }
       .research-system { grid-template-columns: 1fr; }
       .research-arrow { min-height: 24px; transform: rotate(90deg); }
-      .execution-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
-      .execution-item + .execution-item { border-left: 0; padding-left: 0; }
-      .execution-item:nth-child(even) { border-left: 1px solid var(--line); padding-left: 22px; }
-      .execution-item:nth-child(n+3) { border-top: 1px solid var(--line); padding-top: 22px; }
+      .execution-grid { grid-template-columns: repeat(2, 1fr); }
       .quality-metrics { grid-template-columns: repeat(2, 1fr); }
+      .impact-grid, .capability-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 680px) {
@@ -359,8 +380,8 @@
       .viz { min-height: 280px; padding: 18px; }
       .quality-metrics { grid-template-columns: 1fr; }
       .execution-grid { grid-template-columns: 1fr; }
-      .execution-item:nth-child(even) { border-left: 0; padding-left: 0; }
-      .execution-item:nth-child(n+2) { border-top: 1px solid var(--line); padding-top: 22px; }
+      .home-head { align-items: flex-start; flex-direction: column; }
+      .method-steps { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -370,6 +391,7 @@
     <div class="shell nav-inner">
       <a class="brand" href="#top">Ruby Lee</a>
       <div class="nav-links">
+        <a href="#impact">Impact</a>
         <a href="#work">Case studies</a>
         <a href="#method">Approach</a>
         <a class="contact-link" href="mailto:ruby9854@gmail.com">Contact</a>
@@ -379,13 +401,52 @@
 
   <main id="top">
     <header class="hero shell">
-      <div class="kicker">Business Operations · Process Improvement · Reporting</div>
-      <h1>Messy operations, made measurable.</h1>
+      <div class="kicker">Business Operations Analyst · Process Improvement · Decision Support</div>
+      <h1>Turning operational problems into measurable improvements.</h1>
       <div class="hero-bottom">
-        <p class="hero-copy">I build practical operating systems — clean datasets, working trackers, automated intake flows, and decision-ready reports — that turn scattered information into action.</p>
-        <p class="hero-note">Selected work in operations analysis, workflow automation, data cleaning, and decision support.</p>
+        <div>
+          <p class="hero-copy">I structure messy information, analyze operating constraints, and build practical workflows that help decision-makers act.</p>
+          <div class="hero-actions">
+            <a class="button-link primary" href="#work">View case studies</a>
+            <a class="button-link" href="./ruby-lee-resume.pdf" target="_blank" rel="noreferrer">View resume ↗</a>
+          </div>
+        </div>
+        <p class="hero-note"><strong>Verified work:</strong> capacity analysis, workflow automation, operational reporting, data cleaning, and outreach decision support.</p>
       </div>
     </header>
+
+    <section class="shell home-section" id="impact" aria-labelledby="impact-title">
+      <div class="home-head">
+        <h2 id="impact-title">Selected impact</h2>
+        <p>Three examples of analysis translated into an operating decision, a process change, or a decision-ready output.</p>
+      </div>
+      <div class="impact-grid">
+        <a class="impact-card" href="#capacity">
+          <div><div class="impact-number">−33%</div><h3>Lower overcapacity</h3><p>Class-level utilization analysis exposed an imbalance hidden by the 78% overall average and supported a schedule adjustment.</p></div>
+          <span class="impact-link">Capacity case →</span>
+        </a>
+        <a class="impact-card" href="#inquiry">
+          <div><div class="impact-number">−40%</div><h3>Faster consultation processing</h3><p>A standardized form, automated sheet capture, and visible follow-up status reduced repeated clarification and cycle time.</p></div>
+          <span class="impact-link">Workflow case →</span>
+        </a>
+        <a class="impact-card" href="#research">
+          <div><div class="impact-number">412 → 42</div><h3>Raw records to priority targets</h3><p>Cleaning and enrichment turned fragmented school data into 325 validated profiles and 42 director-ready outreach targets.</p></div>
+          <span class="impact-link">Decision-support case →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="shell home-section" aria-labelledby="capabilities-title">
+      <div class="home-head">
+        <h2 id="capabilities-title">What I do</h2>
+        <p>Tools are useful only when they make the operating problem easier to understand, manage, or decide.</p>
+      </div>
+      <div class="capability-grid">
+        <div class="capability-card"><div class="eyebrow">Operations analysis</div><h3>Find the constraint behind the average</h3><p>Compare demand, capacity, utilization, and coverage at the level where an operating decision can be made.</p></div>
+        <div class="capability-card"><div class="eyebrow">Process improvement</div><h3>Reduce rework and clarify handoffs</h3><p>Map the current workflow, standardize inputs, automate capture, and make ownership and status visible.</p></div>
+        <div class="capability-card"><div class="eyebrow">Decision support</div><h3>Turn scattered records into usable choices</h3><p>Clean, validate, enrich, and structure information so decision-makers can compare options consistently.</p></div>
+      </div>
+    </section>
 
     <section class="shell project-index" id="work" aria-label="Selected projects">
       <a class="project-link" href="#capacity">
@@ -399,8 +460,8 @@
         <span class="arrow">↘</span>
       </a>
       <a class="project-link" href="#research">
-        <span class="num">PROJECT 03 · DATA CLEANING / DECISION SUPPORT</span>
-        <h2>School Data Cleaning &amp; Outreach Prioritization</h2>
+        <span class="num">PROJECT 03 · DATA QUALITY / MARKET INTELLIGENCE</span>
+        <h2>School Market Intelligence &amp; Outreach Prioritization</h2>
         <span class="arrow">↘</span>
       </a>
     </section>
@@ -408,7 +469,7 @@
     <article class="case" id="capacity">
       <div class="shell">
         <header class="case-head">
-          <div class="case-label eyebrow">Project 01<br>Operations Analytics</div>
+          <div class="case-label eyebrow">Project 01<br>Operations Analysis &amp; Capacity Planning</div>
           <div class="case-title-wrap">
             <h2>Capacity and scheduling optimization</h2>
             <p class="case-summary">A healthy overall utilization rate was hiding a class-level imbalance. I combined enrollment, capacity, demand, and instructor availability to identify the constraint and support a workable schedule adjustment.</p>
@@ -474,14 +535,20 @@
         </section>
 
         <section class="execution-panel" aria-label="Capacity project execution details">
-          <div class="eyebrow">Execution details</div>
+          <div class="eyebrow">How the work was done</div>
           <div class="execution-grid">
-            <div class="execution-item"><h4>My work</h4><p>Built the class-level tracker, calculated utilization, identified the bottleneck, and compared schedule options.</p></div>
-            <div class="execution-item"><h4>Tools / methods</h4><p>Excel · Google Sheets · utilization analysis · capacity planning · constraint mapping</p></div>
+            <div class="execution-item"><h4>Objective</h4><p>Identify the class-level imbalance and recommend a workable schedule change without ignoring demand or instructor constraints.</p></div>
+            <div class="execution-item"><h4>Data / inputs</h4><p>Enrollment, available seats, program demand, instructor availability, and the active seven-class schedule.</p></div>
+            <div class="execution-item"><h4>My role</h4><p>Built the class-level tracker, calculated utilization, identified the bottleneck, and compared schedule options.</p></div>
+            <div class="execution-item"><h4>Analysis</h4><p>Compared the 78% portfolio average with class-level utilization, then tested the pressure point against demand and available coverage.</p></div>
+            <div class="execution-item"><h4>Recommendation</h4><p>Redistribute student load and add or adjust coverage where availability could support the demand.</p></div>
+            <div class="execution-item"><h4>Implementation</h4><p>The schedule adjustment was applied and class-level utilization was retained as a weekly monitoring view.</p></div>
             <div class="execution-item"><h4>Deliverable</h4><p>Capacity tracker, schedule-adjustment recommendation, and weekly class-level monitoring view.</p></div>
-            <div class="execution-item"><h4>Decision scope</h4><p>I prepared the analysis and recommendation; schedule changes were reviewed and finalized with the director.</p></div>
+            <div class="execution-item"><h4>Stakeholder / decision</h4><p>I prepared the analysis and recommendation; the director reviewed and finalized the schedule changes.</p></div>
+            <div class="execution-item"><h4>Tools / methods</h4><p>Excel · Google Sheets · utilization analysis · capacity planning · constraint mapping</p></div>
           </div>
         </section>
+        <p class="measurement-note"><strong>Measurement note:</strong> Overcapacity is shown as a normalized index (100 before, 67 after). Class names and underlying counts are anonymized; the verified change is a 33% reduction.</p>
 
         <div class="section-intro">
           <h3>Management view</h3>
@@ -575,7 +642,7 @@
     <article class="case" id="inquiry">
       <div class="shell">
         <header class="case-head">
-          <div class="case-label eyebrow">Project 02<br>Process Improvement</div>
+          <div class="case-label eyebrow">Project 02<br>Process Improvement &amp; Operational Reporting</div>
           <div class="case-title-wrap">
             <h2>Inquiry workflow and reporting improvement</h2>
             <p class="case-summary">Inquiry details arrived through multiple channels and required repeated clarification. I redesigned the intake and review flow so the director received structured, decision-ready information.</p>
@@ -618,14 +685,20 @@
         </section>
 
         <section class="execution-panel" aria-label="Inquiry project execution details">
-          <div class="eyebrow">Execution details</div>
+          <div class="eyebrow">How the work was done</div>
           <div class="execution-grid">
-            <div class="execution-item"><h4>My work</h4><p>Defined the intake fields, built the form and tracker, automated response capture, and added status controls.</p></div>
-            <div class="execution-item"><h4>Tools / methods</h4><p>Google Forms · Google Sheets · automated data capture · workflow mapping · status tracking</p></div>
+            <div class="execution-item"><h4>Objective</h4><p>Reduce repeated clarification and move complete inquiry information to the director faster.</p></div>
+            <div class="execution-item"><h4>Data / inputs</h4><p>Inquiry details, required consultation fields, follow-up status, and observed processing time before and after the redesign.</p></div>
+            <div class="execution-item"><h4>My role</h4><p>Mapped the handoffs, defined required fields, built the form and tracker, automated response capture, and added status controls.</p></div>
+            <div class="execution-item"><h4>Analysis</h4><p>Traced delays to incomplete and inconsistent intake, manual re-entry, and limited visibility into pending cases.</p></div>
+            <div class="execution-item"><h4>Recommendation</h4><p>Capture required information once, standardize categories, and use a centralized queue for review and follow-up.</p></div>
+            <div class="execution-item"><h4>Implementation</h4><p>Google Form submissions populated Google Sheets automatically, with status and summary fields supporting director review.</p></div>
             <div class="execution-item"><h4>Deliverable</h4><p>Standardized intake form, automatically populated inquiry tracker, and director-ready review summary.</p></div>
-            <div class="execution-item"><h4>Decision scope</h4><p>I designed and implemented the workflow; the director used the structured output for consultation decisions.</p></div>
+            <div class="execution-item"><h4>Stakeholder / decision</h4><p>I designed and implemented the workflow; the director used the structured output for consultation and follow-up decisions.</p></div>
+            <div class="execution-item"><h4>Tools / methods</h4><p>Google Forms · Google Sheets · automated data capture · workflow mapping · status tracking</p></div>
           </div>
         </section>
+        <p class="measurement-note"><strong>Measurement note:</strong> The 40% figure is the observed reduction in consultation processing time after the redesigned workflow was introduced. Identifying records are not displayed.</p>
 
         <div class="section-intro"><h3>Redesigned workflow</h3><p>The form was not the outcome. Its purpose was to move complete, consistently structured information to the next decision-maker with less rework.</p></div>
         <section class="workflow" aria-label="Inquiry workflow">
@@ -636,50 +709,25 @@
           <div class="flow-step"><span>05 · ACTION</span><b>Director review / follow-up</b></div>
         </section>
 
-        <div class="section-intro"><h3>Reporting view</h3><p>The manager-facing view prioritizes queue health and cycle time rather than displaying every available field.</p></div>
+        <div class="section-intro"><h3>Operational control view</h3><p>The manager-facing view answers two questions without relying on decorative metrics: what information is ready, and what still needs action?</p></div>
         <section class="dashboard" aria-label="Inquiry dashboard">
           <div class="viz dark span-7">
-            <div class="viz-title"><div><h4>Weekly inquiry volume</h4><p class="viz-sub">Received vs. processed · illustrative reconstruction</p></div><div class="legend"><span><i></i> received</span></div></div>
-            <svg viewBox="0 0 640 250" role="img" aria-label="Weekly inquiry volume trend">
-              <g stroke="#34332f"><line x1="45" y1="60" x2="610" y2="60"/><line x1="45" y1="110" x2="610" y2="110"/><line x1="45" y1="160" x2="610" y2="160"/><line x1="45" y1="210" x2="610" y2="210"/></g>
-              <path d="M58 172 L125 148 L192 161 L259 110 L326 130 L393 76 L460 92 L527 55 L594 82" fill="none" stroke="#f8f7f3" stroke-width="2"/>
-              <g fill="#f8f7f3"><circle cx="58" cy="172" r="5"/><circle cx="125" cy="148" r="5"/><circle cx="192" cy="161" r="5"/><circle cx="259" cy="110" r="5"/><circle cx="326" cy="130" r="5"/><circle cx="393" cy="76" r="5"/><circle cx="460" cy="92" r="5"/><circle cx="527" cy="55" r="5"/><circle cx="594" cy="82" r="5"/></g>
-              <path d="M58 188 L125 165 L192 170 L259 134 L326 144 L393 102 L460 109 L527 84 L594 92" fill="none" stroke="#77746e" stroke-width="2" stroke-dasharray="4 5"/>
-              <g class="chart-text-light"><text x="48" y="232">W1</text><text x="182" y="232">W3</text><text x="316" y="232">W5</text><text x="450" y="232">W7</text><text x="584" y="232">W9</text></g>
+            <div class="viz-title"><div><h4>Decision-ready inquiry tracker</h4><p class="viz-sub">Anonymized field structure · no illustrative volumes</p></div></div>
+            <svg viewBox="0 0 640 250" role="img" aria-label="Anonymized inquiry tracker showing the fields used for director review">
+              <g fill="none" stroke="#3e4148"><rect x="34" y="46" width="572" height="164" rx="14"/><line x1="34" y1="88" x2="606" y2="88"/><line x1="34" y1="129" x2="606" y2="129"/><line x1="34" y1="170" x2="606" y2="170"/><line x1="198" y1="46" x2="198" y2="210"/><line x1="414" y1="46" x2="414" y2="210"/></g>
+              <g class="chart-text-light"><text x="50" y="72">INQUIRY</text><text x="216" y="72">REQUIRED DETAILS</text><text x="432" y="72">STATUS / ACTION</text><text x="50" y="113">Program</text><text x="216" y="113">Complete</text><text x="432" y="113">Ready for review</text><text x="50" y="154">Schedule</text><text x="216" y="154">Needs clarification</text><text x="432" y="154">Pending</text><text x="50" y="195">Consultation</text><text x="216" y="195">Complete</text><text x="432" y="195">Follow-up</text></g>
             </svg>
           </div>
 
           <div class="viz span-5">
-            <div class="viz-title"><div><h4>Inquiry type</h4><p class="viz-sub">Share of incoming requests</p></div></div>
-            <svg viewBox="0 0 440 250" role="img" aria-label="Dot matrix representing inquiry types">
-              <g id="dots"></g>
-              <g class="chart-text"><text x="292" y="72">PROGRAM · 42%</text><text x="292" y="110">SCHEDULE · 28%</text><text x="292" y="148">FEES · 18%</text><text x="292" y="186">OTHER · 12%</text></g>
-              <g fill="#181816"><circle cx="274" cy="68" r="5"/></g><g fill="#66645f"><circle cx="274" cy="106" r="5"/></g><g fill="#aaa7a0"><circle cx="274" cy="144" r="5"/></g><g fill="#d6d3cc"><circle cx="274" cy="182" r="5"/></g>
-            </svg>
-          </div>
-
-          <div class="viz span-4">
-            <div class="viz-title"><div><h4>Queue health</h4><p class="viz-sub">Current operational status</p></div></div>
-            <svg viewBox="0 0 380 250" role="img" aria-label="Sixty-five percent of inquiries processed, with pending and unresolved cases remaining visible">
-              <circle cx="190" cy="116" r="55" fill="none" stroke="#e2e6ec" stroke-width="18"/>
-              <circle cx="190" cy="116" r="55" fill="none" stroke="#2457a6" stroke-width="18" stroke-dasharray="225 346" transform="rotate(-90 190 116)"/>
-              <text x="190" y="112" text-anchor="middle" style="font: 700 34px var(--display); fill:#17191d">65%</text>
-              <text class="chart-text" x="190" y="134" text-anchor="middle">PROCESSED</text>
-              <line x1="80" y1="205" x2="300" y2="205" stroke="#dce1e8"/>
-              <text class="chart-text" x="190" y="228" text-anchor="middle">Pending and unresolved cases remain visible</text>
-            </svg>
-          </div>
-
-          <div class="viz span-8">
-            <div class="viz-title"><div><h4>Processing-time trend</h4><p class="viz-sub">Baseline vs. redesigned workflow · normalized</p></div></div>
-            <svg viewBox="0 0 700 250" role="img" aria-label="Processing time decreased after workflow redesign">
-              <line class="axis" x1="55" y1="196" x2="665" y2="196"/>
-              <path d="M65 80 C140 74 205 88 278 82 S395 90 430 86" fill="none" stroke="#aaa7a0" stroke-width="2"/>
-              <line x1="430" y1="42" x2="430" y2="208" stroke="#181816" stroke-dasharray="3 5"/>
-              <path d="M430 86 C484 110 530 133 580 143 S625 151 655 153" fill="none" stroke="#2457a6" stroke-width="3"/>
-              <circle cx="430" cy="86" r="6" fill="#2457a6"/><circle cx="655" cy="153" r="6" fill="#2457a6"/>
-              <text class="chart-label" x="447" y="58">WORKFLOW REDESIGN</text><text class="chart-label" x="601" y="137">−40%</text>
-              <text class="chart-text" x="58" y="220">BASELINE</text><text class="chart-text" x="585" y="220">SUSTAINED VIEW</text>
+            <div class="viz-title"><div><h4>Processing-time change</h4><p class="viz-sub">Normalized comparison · verified change</p></div></div>
+            <svg viewBox="0 0 440 250" role="img" aria-label="Consultation processing time decreased by forty percent after workflow redesign">
+              <line class="axis" x1="52" y1="198" x2="392" y2="198"/>
+              <rect x="92" y="58" width="92" height="140" rx="18" fill="#17191d"/>
+              <rect x="258" y="114" width="92" height="84" rx="18" fill="#2457a6"/>
+              <text class="chart-label-light" x="118" y="87">100</text><text class="chart-label-light" x="289" y="142">60</text>
+              <text class="chart-text" x="106" y="224">BEFORE</text><text class="chart-text" x="277" y="224">AFTER</text>
+              <text class="chart-label" x="208" y="88">−40%</text>
             </svg>
           </div>
         </section>
@@ -708,9 +756,9 @@
     <article class="case" id="research">
       <div class="shell">
         <header class="case-head">
-          <div class="case-label eyebrow">Project 03<br>Data Cleaning &amp; Decision Support</div>
+          <div class="case-label eyebrow">Project 03<br>Market Intelligence &amp; Decision Support</div>
           <div class="case-title-wrap">
-            <h2>Independent school data cleaning and outreach prioritization</h2>
+            <h2>Independent school market intelligence and outreach prioritization</h2>
             <p class="case-summary">The raw school data contained duplicates, inconsistent formats, missing fields, and irrelevant records. I cleaned and enriched the dataset, then segmented 325 validated schools to identify 42 priority targets for international-student outreach and director review.</p>
           </div>
         </header>
@@ -767,14 +815,20 @@
         </section>
 
         <section class="execution-panel" aria-label="School data project execution details">
-          <div class="eyebrow">Execution details</div>
+          <div class="eyebrow">How the work was done</div>
           <div class="execution-grid">
-            <div class="execution-item"><h4>My work</h4><p>Audited, deduplicated, standardized, validated, enriched, segmented, and prioritized the school records.</p></div>
-            <div class="execution-item"><h4>Tools / methods</h4><p>Google Sheets · data cleaning · validation · missing-value handling · enrichment · segmentation</p></div>
+            <div class="execution-item"><h4>Objective</h4><p>Create a reliable target base and identify independent schools with stronger fit for international-student outreach.</p></div>
+            <div class="execution-item"><h4>Data / inputs</h4><p>412 records from BC government data and additional public research, with duplicates, missing fields, inconsistent formats, and invalid rows.</p></div>
+            <div class="execution-item"><h4>My role</h4><p>Audited, deduplicated, standardized, validated, enriched, segmented, and prioritized the school records.</p></div>
+            <div class="execution-item"><h4>Analysis</h4><p>Isolated independent schools, standardized location and affiliation fields, completed required values, then compared distance, religion, and outreach relevance.</p></div>
+            <div class="execution-item"><h4>Recommendation</h4><p>Prioritize 42 schools whose validated attributes made them more relevant for the intended international-student outreach.</p></div>
+            <div class="execution-item"><h4>Implementation</h4><p>The cleaned tracker and prioritized target view were handed to the director for outreach review and action.</p></div>
             <div class="execution-item"><h4>Deliverable</h4><p>Cleaned 325-school dataset, standardized research tracker, and prioritized list of 42 outreach targets.</p></div>
-            <div class="execution-item"><h4>Decision scope</h4><p>I owned the data preparation and target recommendation; the director reviewed the list for outreach action.</p></div>
+            <div class="execution-item"><h4>Stakeholder / decision</h4><p>I owned data preparation and target recommendation; the director reviewed which schools to move forward for outreach.</p></div>
+            <div class="execution-item"><h4>Tools / methods</h4><p>Google Sheets · data cleaning · validation · missing-value handling · enrichment · segmentation</p></div>
           </div>
         </section>
+        <p class="measurement-note"><strong>Data-quality note:</strong> 87 duplicate or invalid records were removed. Required-field completeness increased from 68% to 96%, enabling consistent comparison across the 325 validated profiles.</p>
 
         <div class="section-intro">
           <h3>From raw records to an outreach decision</h3>
@@ -855,10 +909,18 @@
     </article>
 
     <section class="shell method" id="method">
-      <h2>A practical path from evidence to action.</h2>
+      <h2>How I move from evidence to action.</h2>
       <div class="method-copy">
-        <p>I start by defining the decision that needs to be made, then structure only the information required to support it.</p>
-        <p>I build the working tracker or workflow, test it against real operating cases, clarify who owns the final decision, and measure whether the change improved visibility, cycle time, data quality, or resource allocation.</p>
+        <p>I start with the operating question, not the software. Then I structure the information, identify the constraint, recommend a practical change, and leave behind a usable way to monitor the result.</p>
+        <div class="method-steps" aria-label="Working method">
+          <div class="method-step"><span>01</span><b>Define the operating problem</b></div>
+          <div class="method-step"><span>02</span><b>Structure the information</b></div>
+          <div class="method-step"><span>03</span><b>Find patterns and bottlenecks</b></div>
+          <div class="method-step"><span>04</span><b>Quantify the opportunity</b></div>
+          <div class="method-step"><span>05</span><b>Recommend a practical change</b></div>
+          <div class="method-step"><span>06</span><b>Measure and monitor the result</b></div>
+        </div>
+        <div class="tools-line"><strong>Verified tools and methods:</strong> Excel · Google Sheets · Google Forms · automated data capture · data cleaning · utilization analysis · capacity planning · workflow mapping · status tracking</div>
         <p class="method-note"><strong>Data note:</strong> These case studies are based on real operational improvement work. Names and identifying details have been removed, and dashboard values have been anonymized or reconstructed to protect confidential information.</p>
       </div>
     </section>
@@ -867,7 +929,7 @@
   <footer>
     <div class="shell">
       <div class="footer-grid">
-        <h2>Clearer operations start with a better view of the problem.</h2>
+        <h2>Let’s make the operating problem easier to act on.</h2>
         <div class="footer-links">
           <a href="mailto:ruby9854@gmail.com">ruby9854@gmail.com</a>
           <a href="https://www.linkedin.com/in/rubylee529/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
@@ -878,18 +940,5 @@
     </div>
   </footer>
 
-  <script>
-    // Draw the dot matrix without any external library.
-    const dotGroup = document.getElementById('dots');
-    const palette = ['#181816', '#66645f', '#aaa7a0', '#d6d3cc'];
-    for (let i = 0; i < 100; i++) {
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('cx', 42 + (i % 10) * 20);
-      circle.setAttribute('cy', 40 + Math.floor(i / 10) * 19);
-      circle.setAttribute('r', 5.4);
-      circle.setAttribute('fill', i < 42 ? palette[0] : i < 70 ? palette[1] : i < 88 ? palette[2] : palette[3]);
-      dotGroup.appendChild(circle);
-    }
-  </script>
 </body>
 </html>
